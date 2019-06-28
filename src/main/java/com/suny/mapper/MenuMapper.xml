@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suny.mapper.MenuMapper">
+    <select id="selAll" resultType="menu">
+        select * from menu
+    </select>
+    <select id="selById" resultType="menu">
+        select * from menu
+        <where>
+                <if test="map.mid!=0">
+                    mid=#{map.id}
+                </if>
+        </where>
+
+    </select>
+</mapper>
