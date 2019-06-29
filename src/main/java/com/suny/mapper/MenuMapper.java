@@ -7,5 +7,5 @@ import java.util.Map;
 
 public interface MenuMapper {
     List<Menu> selAll();
-    List<Menu> selById(Map<String,Object> map);
+    List<Menu> selById(List<Menu> list);
 }

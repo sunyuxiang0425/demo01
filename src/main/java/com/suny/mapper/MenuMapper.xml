@@ -7,12 +7,11 @@
         select * from menu
     </select>
     <select id="selById" resultType="menu">
-        select * from menu
-        <where>
-                <if test="map.mid!=0">
-                    mid=#{map.id}
-                </if>
-        </where>
-
+        select * from menu where
+                <foreach collection="list" item="menu" >
+                    <if test="menu.mid==0">
+                        mid=#{menu.id}
+                    </if>
+                </foreach>
     </select>
 </mapper>

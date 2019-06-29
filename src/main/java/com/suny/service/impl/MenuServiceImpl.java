@@ -18,10 +18,8 @@ public class MenuServiceImpl implements MenuService {
     public List<Menu> showChild() {
         List<Menu> menus = menuMapper.selAll();
         Map<String,Object> map=new HashMap<>();
-            for (Menu menu:menus){
-                map.put("map",menu);
-            }
-        List<Menu> list = menuMapper.selById(map);
+
+        List<Menu> list = menuMapper.selById(menus);
 
         return list;
     }
