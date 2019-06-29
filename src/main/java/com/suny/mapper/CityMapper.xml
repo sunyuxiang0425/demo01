@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suny.mapper.CityMapper">
+    <resultMap id="country" type="com.suny.pojo.Countrys">
+        <result column="country_id" property="country_id"></result>
+        <result column="country_name" property="country_name"></result>
+        <collection property="allcity" javaType="list" ofType="com.suny.pojo.Citys">
+            <id column="city_id" property="id"></id>
+            <result column="city_name" property="name"></result>
+            <result column="countrys_id" property="cid"></result>
+        </collection>
+    </resultMap>
+    <select id="selCitys" resultType="Citys">
+        select * from citys
+    </select>
+    <select id="selCountrys" resultType="Countrys">
+        select * from countrys
+    </select>
+    <select id="selCountryCitys" resultMap="country">
+        select city_id,city_name,countrys_id,country_name from citys ,countrys  where country_id=countrys_id and country_id=#{0}
+    </select>
+</mapper>

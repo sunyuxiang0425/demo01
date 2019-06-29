@@ -7,6 +7,7 @@
   <groupId>com.suny</groupId>
   <artifactId>demo01</artifactId>
   <version>1.0-SNAPSHOT</version>
+
   <packaging>war</packaging>
 
   <properties>
@@ -142,7 +143,7 @@
           <version>2.2</version>
           <configuration>
             <!-- 控制tomcat端口号 -->
-            <port>8080</port>
+            <port>8081</port>
             <!-- 项目发布到tomcat后的名称 -->
             <!-- / 相当于把项目发布名称为ROOT -->
             <!-- /abc -->

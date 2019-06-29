@@ -12,15 +12,5 @@ import java.util.Map;
 
 @Service
 public class MenuServiceImpl implements MenuService {
-    @Autowired
-    private MenuMapper menuMapper;
-    @Override
-    public List<Menu> showChild() {
-        List<Menu> menus = menuMapper.selAll();
-        Map<String,Object> map=new HashMap<>();
 
-        List<Menu> list = menuMapper.selById(menus);
-
-        return list;
-    }
 }
