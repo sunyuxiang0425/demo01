@@ -26,10 +26,13 @@
 <!--    sqlSessionFactory-->
     <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
+
 <!--        自动扫描Mapper.xml文件-->
         <property name="mapperLocations" value="classpath:com/suny/mapper/*.xml"></property>
 <!--        给某包下的类起全限定路径-->
         <property name="typeAliasesPackage" value="com.suny.pojo"></property>
+<!--        开启驼峰命名规则-->
+        <property name="configLocation" value="classpath:mybatise-config.xml"></property>
     </bean>
 <!--    扫描器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

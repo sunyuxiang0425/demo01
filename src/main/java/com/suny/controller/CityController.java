@@ -1,6 +1,7 @@
 package com.suny.controller;
 
 import com.suny.pojo.Citys;
+import com.suny.pojo.Countrys;
 import com.suny.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +16,16 @@ public class CityController {
     private CityService cityService;
     @RequestMapping("showcity")
     @ResponseBody
-    public List<Citys> show(){
-        List<Citys> list = cityService.showCountryCitys(2);
+    public List<Citys> showCity(){
+        List<Citys> list = cityService.showCountryCitys(1);
+        return list;
+    }
+
+
+    @RequestMapping("showcountry")
+    @ResponseBody
+    public List<Countrys> showCountry(){
+        List<Countrys> list = cityService.showCityCountry();
         return list;
     }
 }
